@@ -1,0 +1,13 @@
+[0m[[0minfo[0m] [0mRunning com.kjcondron.scalaqlite.ScalaQLiteApp [0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\Documents\GitHub\ScalaQLite\target\scala-2.10\classes[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.sbt\boot\scala-2.10.3\lib\scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.ivy2\cache\net.databinder.dispatch\dispatch-core_2.10\jars\dispatch-core_2.10-0.11.0.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.7.16.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.ivy2\cache\io.netty\netty\bundles\netty-3.6.3.Final.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.6.2.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Karl\.ivy2\cache\org.xerial\sqlite-jdbc\jars\sqlite-jdbc-3.7.2.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-1 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-1 exited.[0m
+[0m[[0mdebug[0m] [0mWaiting for thread Hashed wheel timer #1 to terminate.[0m

@@ -1,0 +1,9 @@
+compile
+inspect
+inspect compile
+scalaSource in Compile := baseDirectory.value / "src"
+set scalaSource in Compile := baseDirectory.value / "src"
+compile
+run
+exit
+run

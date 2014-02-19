@@ -1,0 +1,389 @@
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/Karl/Documents/GitHub/ScalaQLite/}scalaqlite...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#scalaqlite_2.10;0.1-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
+[0m[[0mdebug[0m] [0m	validate = true[0m
+[0m[[0mdebug[0m] [0m	refresh = false[0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@443423c[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.3] org.scala-lang#scala-library;2.10.3[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving net.databinder.dispatch#dispatch-core_2.10;0.11.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: net.databinder.dispatch#dispatch-core_2.10;0.11.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: net.databinder.dispatch#dispatch-core_2.10;0.11.0[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: net.databinder.dispatch#dispatch-core_2.10;0.11.0[0m
+[0m[[0mdebug[0m] [0m	found net.databinder.dispatch#dispatch-core_2.10;0.11.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.ning#async-http-client;1.7.16 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.ning#async-http-client;1.7.16 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.ning#async-http-client;1.7.16[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.ning#async-http-client;1.7.16[0m
+[0m[[0mdebug[0m] [0m	found com.ning#async-http-client;1.7.16 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving io.netty#netty;3.6.3.Final ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: io.netty#netty;3.6.3.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: io.netty#netty;3.6.3.Final[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: io.netty#netty;3.6.3.Final[0m
+[0m[[0mdebug[0m] [0m	found io.netty#netty;3.6.3.Final in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.6.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.6.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.6.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.slf4j#slf4j-api;1.6.2[0m
+[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.6.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.xerial#sqlite-jdbc;3.7.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial#sqlite-jdbc;3.7.2 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\sqlite-jdbc\3.7.2\ivys\ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.xerial#sqlite-jdbc;3.7.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.xerial#sqlite-jdbc;3.7.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom (3.7.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.xerial#sqlite-jdbc;3.7.2!sqlite-jdbc.pom(pom.original) (712ms)[0m
+[0m[[0minfo[0m] [0mResolving org.xerial#xerial-project;1.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial#xerial-project;1.1 {}[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\xerial-project\1.1\ivys\ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.xerial#xerial-project;1.1[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.xerial#xerial-project;1.1[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom (1.1)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.xerial#xerial-project;1.1!xerial-project.pom(pom.original) (1159ms)[0m
+[0m[[0minfo[0m] [0mResolving org.xerial#xerial;3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial#xerial;3 {}[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\xerial\3\ivys\ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.xerial#xerial;3[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.xerial#xerial;3[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom (3)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.xerial#xerial;3!xerial.pom(pom.original) (742ms)[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\xerial\3\jars\xerial.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/xerial/xerial/3/xerial-3.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\xerial-project\1.1\jars\xerial-project.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.jar[0m
+[0m[[0mdebug[0m] [0m		tried C:\Users\Karl\.ivy2\local\org.xerial\sqlite-jdbc\3.7.2\jars\sqlite-jdbc.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar[0m
+[0m[[0mdebug[0m] [0m	found org.xerial#sqlite-jdbc;3.7.2 in public[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies net.databinder.dispatch#dispatch-core_2.10;0.11.0->com.ning#async-http-client;1.7.16 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->io.netty#netty;3.6.3.Final [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.ning#async-http-client;1.7.16->org.slf4j#slf4j-api;1.6.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->net.databinder.dispatch#dispatch-core_2.10;0.11.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.xerial#sqlite-jdbc;3.7.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [plugin][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [sources][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [docs][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [pom][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#scalaqlite_2.10;0.1-SNAPSHOT [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.3 [scala-tool->default][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.3 {scala-tool=[default, optional(default)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.3] org.scala-lang#scala-reflect;2.10.3[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.3 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#jline;2.10.3 [optional->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.3 {optional=[compile(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#jline;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#jline;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#jline;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#jline;2.10.3 [optional->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.3->org.fusesource.jansi#jansi;1.4 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.fusesource.jansi#jansi;1.4[0m
+[0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.3->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#scalaqlite_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\default\scalaqlite_2.10\0.1-SNAPSHOT\resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.databinder.dispatch#dispatch-core_2.10;0.11.0!dispatch-core_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.xerial#sqlite-jdbc;3.7.2!sqlite-jdbc.jar (10238ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.ning#async-http-client;1.7.16!async-http-client.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.netty#netty;3.6.3.Final!netty.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.6.2!slf4j-api.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.3!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 7824ms :: artifacts dl 10407ms[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT compile produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT runtime produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT test produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT provided produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT optional produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT compile-internal produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT runtime-internal produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT test-internal produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT plugin produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT sources produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT docs produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT pom produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#scalaqlite_2.10;0.1-SNAPSHOT scala-tool produced in C:\Users\Karl\Documents\GitHub\ScalaQLite\target\resolution-cache\reports\default-scalaqlite_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (7824ms resolve - 10407ms download)[0m
+[0m[[0minfo[0m] [0mDone updating.[0m
