@@ -29,7 +29,6 @@ object ScalaQLiteApp extends App {
   final val UPC_SQL = """Select * from vProducts where ean = 1111"""  
   final val BAR_SQL = """select * from vInventory where bar_id=1"""
   
-  
   Class.forName("org.sqlite.JDBC")
     
   val connection = DriverManager.getConnection(
@@ -55,7 +54,7 @@ object ScalaQLiteApp extends App {
   val upcs = upcres.take(10).toList
   upcs.foreach( r=>println(r.mkString("PRODROW:", ",", "")))
   
-  val https = upcs.map( x=> HttpTest.getResult( x(6).toString ) )
+ val https = upcs.map( x=> HttpTest.getResult( x(6).toString ) )
 }
 
 object ResultSetIterator {
@@ -124,3 +123,21 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
 
 
 
+object MasterInfo {
+  
+  final val MASTER_SQL = """Select * from sqlite_master"""
+  Class.forName("org.sqlite.JDBC")
+  
+  def getDBDetails( dbFile : String ) = {
+    
+	  val connection = DriverManager.getConnection(dbFile)
+      val stmt = connection.createStatement
+      val res= stmt.executeQuery(MASTER_SQL)
+  
+      val md = res.getMetaData()
+      val cols = for(i <- 1 to md.getColumnCount())
+    	  yield md.getColumnName(i)
+  
+      cols
+  }    
+}

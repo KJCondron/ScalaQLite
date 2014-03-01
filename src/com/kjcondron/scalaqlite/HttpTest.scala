@@ -4,11 +4,11 @@ package com.kjcondron.scalaqlite
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.Failure
 import scala.util.Success
+import dispatch._
+import org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl
+import java.io.InputStreamReader
+import org.xml.sax.InputSource
 
-import dispatch.Http
-import dispatch.implyRequestHandlerTuple
-import dispatch.url
-	
 case class HttpResult( 
 		typ : String,
 		brand : String,
@@ -23,12 +23,32 @@ object HttpTest {
   def getResult( upc : String ) : HttpResult = {
 	
 	val page = url(PREFIX + upc)
-	val response = Http(page OK dispatch.as.String)
+	val hmm = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
+	
+	val response = Http(page OK as.String)
 	
 	response onComplete {
-	  case Success(string) => println("got")
+	  case Success(xml) => println("got")
 	  case Failure(error) => println(error)
 	}
+	
+	val source = hmm onComplete {
+	  case Success(is) => println("got is")
+	  case Failure(_) => println("falied to get is")
+	}
+	
+	val source2 = hmm.completeOption.get
+	
+	val parser = new org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl().newSAXParser()
+	val adapter = new scala.xml.parsing.NoBindingFactoryAdapter
+	val deets = adapter.loadXML(source2, parser)
+	println(deets.toString)
+/*	def fn(s : String) = {
+		val parser = new org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl().newSAXParser()
+		val adapter = new scala.xml.parsing.NoBindingFactoryAdapter
+		adapter.loadXML(s, parser)
+	}
+*/
 	HttpResult("Bob","","","")  
   }
   
