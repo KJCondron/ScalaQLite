@@ -27,34 +27,54 @@ object ScalaQLiteApp extends App {
   final val MASTER_SQL = """Select * from sqlite_master"""
   final val TABLES_SQL = """Select type,tbl_name from sqlite_master"""
   final val UPC_SQL = """Select * from vProducts where ean = 1111"""  
+  final val BARS_SQL = """select * from Bars"""  
   final val BAR_SQL = """select * from vInventory where bar_id=1"""
+  final val DELTE_BARS_SQL = """delete from Bars where _id>1"""
+  final val DELTE_INV_SQL = """delete from Inventory where bar_id>1"""
   
+    
   Class.forName("org.sqlite.JDBC")
     
   val connection = DriverManager.getConnection(
-      """jdbc:sqlite:C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216""")
+      """jdbc:sqlite:C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140523""")
   
   val stmt = connection.createStatement
   
-  val res= stmt.executeQuery(MASTER_SQL)
+  val res = stmt.executeQuery(MASTER_SQL)
   
   val md = res.getMetaData()
   val cols = for(i <- 1 to md.getColumnCount())
     yield md.getColumnName(i)
     
   cols.foreach(println)
+  println("st")
   res.foreach( r => println(r.take(2).mkString(":")))
+  println("end")
   
-  val tables = stmt.executeQuery(TABLES_SQL)
-    
+  val tables = stmt.executeQuery(TABLES_SQL)  
   val tl = tables.toList
-  //tl.foreach( t =>  println(t.mkString(":")) )
- 
+  tl.foreach( t =>  println(t.mkString(":")) )
+  
+  val bars = stmt.executeQuery(BARS_SQL)  
+  bars.foreach( t =>  println(t.mkString(":")) )
+  
+  val bars2 = stmt.executeQuery(BARS_SQL)
+  val mdb = bars2.getMetaData()
+  
+  val bcols = for(i <- 1 to md.getColumnCount())
+    yield mdb.getColumnName(i)
+  
+  bcols.foreach(println)
+  
   val upcres = stmt.executeQuery(BAR_SQL);
   val upcs = upcres.take(10).toList
   upcs.foreach( r=>println(r.mkString("PRODROW:", ",", "")))
   
- val https = upcs.map( x=> HttpTest.getResult( x(6).toString ) )
+//  stmt.executeUpdate(DELTE_BARS_SQL)
+//  stmt.executeUpdate(DELTE_INV_SQL)
+  stmt.close()
+  connection.close()
+ //val https = upcs.map( x=> HttpTest.getResult( x(6).toString ) )
 }
 
 object ResultSetIterator {
