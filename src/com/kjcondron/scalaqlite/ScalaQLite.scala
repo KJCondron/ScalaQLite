@@ -22,7 +22,7 @@ package object types {
   type Row = List[Result] 
 }
 
-object ScalaQLiteApp extends App {
+object ScalaQLite extends App {
   
   final val MASTER_SQL = """Select * from sqlite_master"""
   final val TABLES_SQL = """Select type,tbl_name from sqlite_master"""
@@ -31,12 +31,13 @@ object ScalaQLiteApp extends App {
   final val BAR_SQL = """select * from vInventory where bar_id=1"""
   final val DELTE_BARS_SQL = """delete from Bars where _id>1"""
   final val DELTE_INV_SQL = """delete from Inventory where bar_id>1"""
-  
     
+  val httpRes = HttpTest.getResult("088076178656")
+  
   Class.forName("org.sqlite.JDBC")
     
   val connection = DriverManager.getConnection(
-      """jdbc:sqlite:C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140523""")
+      """jdbc:sqlite:C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216""")
   
   val stmt = connection.createStatement
   
