@@ -57,11 +57,12 @@ object HttpTest {
     
  /*   SAXParserImpl.newInstance(null).parse(
 	        new URL("https://www.yahoo.com/").openConnection().getInputStream(),
-            new MyHandler()) */
-	
+            new MyHandler()) 
+*/	
 	//val page = url("https://www.yahoo.com/")
     val page = url(PREFIX+upc)
-	val hmm = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
+    val hmm = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
+//	val is = hmm.completeOption
 	val hmm2 = hmm()
 	
 	/*val response = Http(page OK as.String)
@@ -109,7 +110,9 @@ object HttpTest {
     
     println("Soup Time " + (end - st) / 1000 )
     println("Sax  Time " + (end1 - st1) / 1000 )
-    
+  
+    Http.shutdown
+  
 	HttpResult("Bob","","","")  
   }
   
