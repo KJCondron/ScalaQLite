@@ -22,30 +22,66 @@ case class HttpResult(
 class MyHandler extends DefaultHandler {
   
   var inLink : Boolean = false
+  var inBody : Boolean = false
+  var toResults = false
+  var parseLink = false
   
     override def startElement( uri : String, localName : String,
                       name : String, a : Attributes)
     {
-    	if(localName.equalsIgnoreCase("table"))
-    	  println("table")
-        if(localName.equalsIgnoreCase("a")){
+    	if(localName.equalsIgnoreCase("body"))
+    	    inBody = true
+    	
+        if(inBody && name.equals("a")) {
           if(inLink)
             println("nested link")
           else
             inLink = true
         }
+    	
+    	if(!parseLink && toResults && inBody && inLink)
+    	  parseLink = !a.getValue("href").contains("google")
+    	
+    	if(parseLink)
+    	{
+    	  println("<elem>")
+    	  println("href:" + a.getValue("href"))
+    	}
     }
     
     override def characters( ch : Array[Char], start : Int, length : Int) : Unit =
     {
-      if(inLink)
+      if(toResults)
+        println("ping")
+        
+      if(parseLink)
       {
-        println(ch.foldLeft("")(_+_))
-      } 
+        println("<char>")
+        println("chars:" + ch.foldLeft("")(_+_))
+        println("</char>")
+      }
+      
+      if(!toResults && inBody && inLink)
+    	  toResults = ch.foldLeft("")(_+_).contains("Verbatim")
     }
     
-    override def endElement( uri : String, localName : String, name : String ) =
-      inLink = false
+    override def endElement( uri : String, localName : String, name : String ) = {
+      
+      if(toResults && inLink)
+        println("pong")
+      
+      
+      if(toResults && inLink && parseLink)
+      {
+    	  println("</elem>")
+      }
+      
+      if(inLink)
+        inLink = false
+        
+      if(parseLink)
+        parseLink=false
+    }
 }		
 	
 
