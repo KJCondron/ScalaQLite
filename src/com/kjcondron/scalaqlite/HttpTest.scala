@@ -21,10 +21,15 @@ case class HttpResult(
 		
 class MyHandler extends DefaultHandler {
   
+  def outputResults = words.foreach (e => if(e._2>3) println(e))
+  
   var inLink : Boolean = false
   var inBody : Boolean = false
-  var toResults = false
+  var inResults = false
   var parseLink = false
+  var done = false
+  
+  var words : Map[String, Int] = Map()
   
     override def startElement( uri : String, localName : String,
                       name : String, a : Attributes)
@@ -37,9 +42,16 @@ class MyHandler extends DefaultHandler {
             println("nested link")
           else
             inLink = true
+            
+          if(inResults)
+          {
+    		inResults = !a.getValue("href").contains("advanced_search")
+    		done = true
+          }
+    
         }
     	
-    	if(!parseLink && toResults && inBody && inLink)
+    	if(!parseLink && inResults && inBody && inLink)
     	  parseLink = !a.getValue("href").contains("google")
     	
     	if(parseLink)
@@ -47,31 +59,40 @@ class MyHandler extends DefaultHandler {
     	  println("<elem>")
     	  println("href:" + a.getValue("href"))
     	}
+    	
     }
     
     override def characters( ch : Array[Char], start : Int, length : Int) : Unit =
-    {
-      if(toResults)
-        println("ping")
-        
+    {   
       if(parseLink)
       {
+        val str = new String(ch, start, length)
         println("<char>")
-        println("chars:" + ch.foldLeft("")(_+_))
+        //println("chars: " + length + ":" + ch.size + ":" + ch.foldLeft("")(_+_))
+        println("chars: " + str)
         println("</char>")
+        
+        val localWords = str.split(" ")
+        localWords.foreach( w => {
+        	val lw = w.toLowerCase()
+        	if( words.keys.exists(_==lw) )
+        	{
+        	    val count = words(lw) + 1
+        	  	words += (lw -> count)
+        	}
+        	else
+        	  words += (lw -> 1)
+        	
+        })
       }
       
-      if(!toResults && inBody && inLink)
-    	  toResults = ch.foldLeft("")(_+_).contains("Verbatim")
+      if(!inResults && inBody && inLink)
+    	  inResults = ch.foldLeft("")(_+_).contains("Verbatim")
     }
     
     override def endElement( uri : String, localName : String, name : String ) = {
       
-      if(toResults && inLink)
-        println("pong")
-      
-      
-      if(toResults && inLink && parseLink)
+      if(inResults && inLink && parseLink)
       {
     	  println("</elem>")
       }
@@ -128,10 +149,12 @@ object HttpTest {
 		adapter.loadXML(s, parser)
 	}
 */
+	val h1 = new MyHandler
+	val h2 = new MyHandler
 	println("tag soup parse")
 	val st = System.nanoTime()
 	val parser = new org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl().newSAXParser()
-	parser.parse(hmm2, new MyHandler)
+	parser.parse(hmm2, h1)
 	val end = System.nanoTime()
 	
 	val hmm3 = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
@@ -141,11 +164,14 @@ object HttpTest {
 	val st1 = System.nanoTime()
 	SAXParserImpl.newInstance(null).parse(
 			hmm4,
-            new MyHandler)
+            h2)
     val end1 = System.nanoTime()
     
     println("Soup Time " + (end - st) / 1000 )
     println("Sax  Time " + (end1 - st1) / 1000 )
+    
+    h1.outputResults
+    h2.outputResults
   
     Http.shutdown
   
