@@ -54,12 +54,12 @@ class MyHandler extends DefaultHandler {
     	if(!parseLink && inResults && inBody && inLink)
     	  parseLink = !a.getValue("href").contains("google")
     	
-    	if(parseLink)
+ /*   	if(parseLink)
     	{
     	  println("<elem>")
     	  println("href:" + a.getValue("href"))
     	}
-    	
+  */  	
     }
     
     override def characters( ch : Array[Char], start : Int, length : Int) : Unit =
@@ -67,10 +67,10 @@ class MyHandler extends DefaultHandler {
       if(parseLink)
       {
         val str = new String(ch, start, length)
-        println("<char>")
+    //    println("<char>")
         //println("chars: " + length + ":" + ch.size + ":" + ch.foldLeft("")(_+_))
-        println("chars: " + str)
-        println("</char>")
+    //    println("chars: " + str)
+    //    println("</char>")
         
         val localWords = str.split(" ")
         localWords.foreach( w => {
@@ -92,10 +92,10 @@ class MyHandler extends DefaultHandler {
     
     override def endElement( uri : String, localName : String, name : String ) = {
       
-      if(inResults && inLink && parseLink)
+      /*if(inResults && inLink && parseLink)
       {
     	  println("</elem>")
-      }
+      }*/
       
       if(inLink)
         inLink = false
@@ -108,9 +108,9 @@ class MyHandler extends DefaultHandler {
 
 object HttpTest {
   
-  final val PREFIX = "http://www.google.com/search?q="
+  final val PREFIX = "https://www.google.com/search?q="
   
-  def getResult( upc : String ) : HttpResult = {
+  def getResult( upc : String ) : Map[String,Int] = {
     
  /*   SAXParserImpl.newInstance(null).parse(
 	        new URL("https://www.yahoo.com/").openConnection().getInputStream(),
@@ -118,6 +118,7 @@ object HttpTest {
 */	
 	//val page = url("https://www.yahoo.com/")
     val page = url(PREFIX+upc)
+    println(PREFIX+upc)
     val hmm = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
 //	val is = hmm.completeOption
 	val hmm2 = hmm()
@@ -160,22 +161,24 @@ object HttpTest {
 	val hmm3 = Http(page OK ( resp => new InputSource(resp.getResponseBodyAsStream()) ))
 	val hmm4 = hmm3()
 	
-	println("SAX parse")
+	//println("SAX parse")
 	val st1 = System.nanoTime()
 	SAXParserImpl.newInstance(null).parse(
 			hmm4,
             h2)
     val end1 = System.nanoTime()
     
-    println("Soup Time " + (end - st) / 1000 )
-    println("Sax  Time " + (end1 - st1) / 1000 )
+  //  println("Soup Time " + (end - st) / 1000 )
+  //  println("Sax  Time " + (end1 - st1) / 1000 )
     
-    h1.outputResults
-    h2.outputResults
+  //  h1.outputResults
+  //  h2.outputResults
   
-    Http.shutdown
+   // Http.shutdown
   
-	HttpResult("Bob","","","")  
+	h2.words.filter( { case(_,v) => v > 3 } )
   }
+  
+  def shutdown = Http.shutdown
   
 }

@@ -5,6 +5,7 @@ import java.sql.DriverManager
 import java.sql.ResultSet
 import types._
 import com.kjcondron.scalaqlite.ResultSetIterator._
+import scala.language.implicitConversions
 
 sealed class Result
 
@@ -19,7 +20,7 @@ final case class DoubleResult( double : Double) extends Result {
 }
 
 package object types {
-  type Row = List[Result] 
+  type Row = Map[String,Result] 
 }
 
 object ScalaQLite extends App {
@@ -32,7 +33,7 @@ object ScalaQLite extends App {
   final val DELTE_BARS_SQL = """delete from Bars where _id>1"""
   final val DELTE_INV_SQL = """delete from Inventory where bar_id>1"""
     
-  val httpRes = HttpTest.getResult("088076178656")
+  //val httpRes = HttpTest.getResult("088076178656")
   
   Class.forName("org.sqlite.JDBC")
     
@@ -62,14 +63,23 @@ object ScalaQLite extends App {
   val bars2 = stmt.executeQuery(BARS_SQL)
   val mdb = bars2.getMetaData()
   
-  val bcols = for(i <- 1 to md.getColumnCount())
+  val bcols = for(i <- 1 to mdb.getColumnCount())
     yield mdb.getColumnName(i)
   
   bcols.foreach(println)
   
   val upcres = stmt.executeQuery(BAR_SQL);
-  val upcs = upcres.take(10).toList
-  upcs.foreach( r=>println(r.mkString("PRODROW:", ",", "")))
+  MasterInfo.printResultSetInfo(upcres)
+  val upcRows = upcres.take(100).toList
+  upcRows.foreach( r => {
+    println( r.mkString("PRODROW:", ",", "") + ":" + HttpTest.getResult( r("upc").toString ).mkString("HTTPRES:", ",", "" ))
+    Thread.sleep(1000)
+  })
+  
+  HttpTest.shutdown
+  
+// val upcs = upcRows.map(_("upc"))
+// upcs.foreach(println)
   
 //  stmt.executeUpdate(DELTE_BARS_SQL)
 //  stmt.executeUpdate(DELTE_INV_SQL)
@@ -91,6 +101,9 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
 	// r is non functional so it is not surprising we need a var to handle it
 	var hasNext = !r.isAfterLast()
 	
+	private def getKey(ic : Int) : String = {
+      mMetaData.getColumnName(ic)
+    }
 	private def getResult(ic : Int) : Result = {
       val t = mMetaData.getColumnType(ic)
       t match {
@@ -135,9 +148,9 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
 	}
 	
 	def next() : Row = {
-			val ret = (1 to mColCount).map( x => getResult(x) ).toList
+			val ret = (1 to mColCount).map( x => getKey(x) -> getResult(x) )
 			hasNext = r.next
-			ret
+			ret.toMap
 	}
 
 }
@@ -160,5 +173,18 @@ object MasterInfo {
     	  yield md.getColumnName(i)
   
       cols
-  }    
+  }
+  
+  def getResultSetInfo( res : ResultSet ) = {
+      
+      val md = res.getMetaData()
+      val cols = for(i <- 1 to md.getColumnCount())
+    	  yield md.getColumnName(i)
+    	  
+     cols
+  }
+  
+  def printResultSetInfo( res : ResultSet ) =
+    getResultSetInfo(res).foreach(println)
+  
 }
