@@ -23,6 +23,7 @@ import javax.swing.event.TreeExpansionListener
 import java.util.Enumeration
 import javax.swing.tree.TreePath
 import javax.swing.text.Position
+import java.sql.Connection
 
 sealed class Result
 
@@ -40,7 +41,7 @@ package object types {
   type Row = Map[String,Result] 
 }
 
-object ScalaQLite extends App {
+object ScalaQLiteHTTP extends App {
   
   final val MASTER_SQL = """Select * from sqlite_master"""
   final val TABLES_SQL = """Select type,tbl_name from sqlite_master"""
@@ -86,7 +87,7 @@ object ScalaQLite extends App {
   bcols.foreach(println)
   
   val upcres = stmt.executeQuery(BAR_SQL);
-  MasterInfo.printResultSetInfo(upcres)
+  SQLiteHelper.printResultSetInfo(upcres)
   val upcRows = upcres.take(100).toList
   /*upcRows.foreach( r => {
     println( r.mkString("PRODROW:", ",", "") + ":" + HttpTest.getResult( r("upc").toString ).mkString("HTTPRES:", ",", "" ))
@@ -172,14 +173,25 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
 
 }
 
-object MasterInfo {
+object ScalaQLite extends App {
+ 
+  val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216"""
+  val dbDetails = SQLiteHelper.getDBDetails(db)
+  SQLiteHelper.printDBInfo(dbDetails)
+}
+
+
+object SQLiteHelper {
   
   final val MASTER_SQL = """Select * from sqlite_master"""
+  final val TABLES_SQL = """Select * from sqlite_master where type='table'"""
   Class.forName("org.sqlite.JDBC")
   
-  def getDBDetails( dbFile : String ) = {
+  type DBDetails = (IndexedSeq[String], ResultSet, Connection)  
+
+  def getDBDetails( dbFile : String ) : DBDetails = {
     
-	  val connection = DriverManager.getConnection(dbFile)
+	  val connection = DriverManager.getConnection("jdbc:sqlite:"+dbFile)
       val stmt = connection.createStatement
       val res= stmt.executeQuery(MASTER_SQL)
   
@@ -187,7 +199,42 @@ object MasterInfo {
       val cols = for(i <- 1 to md.getColumnCount())
     	  yield md.getColumnName(i)
   
-      cols
+      (cols, res, connection)
+  }
+  
+  def getTableDetails( tableName : String, conn : Connection ) = {
+    val stmt = conn.createStatement
+    val res= stmt.executeQuery(MASTER_SQL)
+  
+  }
+  
+  def getTableNames( conn : Connection ) = {
+    val stmt = conn.createStatement
+    val res = stmt.executeQuery(TABLES_SQL)
+    res.map( _("name") )
+  }
+  
+  def printDBInfo( details : DBDetails )  : Unit =
+    printDBInfo(details._1, details._2)
+    
+  class MaxLenString( str : String ){
+  	def get( len : Int ) = if(str.length > len) { 
+  	  val substr = str.substring(0, len-3) + "..."
+  	  substr
+  	  } else str
+  }
+  
+  implicit def toMLS( str : String ) = new MaxLenString(str)  
+  
+  def printDBInfo( header : IndexedSeq[String],  results : ResultSet ) : Unit = {
+    println( header.mkString("", "\t\t", "") )
+    results.foreach( r => {
+      val values = header.map( h => r(h) match {
+        case StringResult(sr) => sr.get(20)
+        case _ => r(h)
+      }) 
+      println(values.mkString("","\t\t",""))
+    })
   }
   
   def getResultSetInfo( res : ResultSet ) = {
@@ -232,7 +279,7 @@ class TreeExpandedLister(
 
 class DBViewer( val dbLoc : String ) extends Component {
   
-  val dbInfo = MasterInfo.getDBDetails(dbLoc)
+  val (_,_,conn) = SQLiteHelper.getDBDetails(dbLoc)
   
   def getTopNode = {
     val headings = List("Tables", "Views")
@@ -262,7 +309,7 @@ class DBViewer( val dbLoc : String ) extends Component {
       if( evt.getPath == tablePath ) {
     	  val tblNode = evt.getPath.getLastPathComponent().asInstanceOf[DefaultMutableTreeNode]
     	  tblNode.removeAllChildren
-    	  List('Table1, 'Table2, 'Table3).foreach(t=>tblNode.add(new DefaultMutableTreeNode(t)))
+    	  SQLiteHelper.getTableNames(conn).foreach(t=>tblNode.add(new DefaultMutableTreeNode(t)))
       }
     }
     
@@ -286,12 +333,15 @@ class DBViewer( val dbLoc : String ) extends Component {
 
 object SwingApp extends SimpleSwingApplication {
   
+  val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216"""
+  
+  
   def top = new MainFrame {
     title = "MyApp"
     preferredSize = new Dimension(600,600) 
     contents = new SplitPane(
         Orientation.Vertical,
-        new ScrollPane( new DBViewer("mydb") ),
+        new ScrollPane( new DBViewer(db) ),
         new SplitPane(Orientation.Horizontal) )
   }  
 }
