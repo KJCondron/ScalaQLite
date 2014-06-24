@@ -6,6 +6,7 @@ import java.sql.ResultSet
 import types._
 import com.kjcondron.scalaqlite.ResultSetIterator._
 import scala.language.implicitConversions
+import java.sql.Connection
 
 sealed class Result
 
@@ -23,7 +24,7 @@ package object types {
   type Row = Map[String,Result] 
 }
 
-object ScalaQLite extends App {
+object ScalaQLiteHTTP extends App {
   
   final val MASTER_SQL = """Select * from sqlite_master"""
   final val TABLES_SQL = """Select type,tbl_name from sqlite_master"""
@@ -69,7 +70,7 @@ object ScalaQLite extends App {
   bcols.foreach(println)
   
   val upcres = stmt.executeQuery(BAR_SQL);
-  MasterInfo.printResultSetInfo(upcres)
+  SQLiteHelper.printResultSetInfo(upcres)
   val upcRows = upcres.take(100).toList
   upcRows.foreach( r => {
     println( r.mkString("PRODROW:", ",", "") + ":" + HttpTest.getResult( r("upc").toString ).mkString("HTTPRES:", ",", "" ))
@@ -155,16 +156,25 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
 
 }
 
+object ScalaQLite extends App {
+ 
+  val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216"""
+  val dbDetails = SQLiteHelper.getDBDetails(db)
+  SQLiteHelper.printDBInfo(dbDetails)
+}
 
 
-object MasterInfo {
+object SQLiteHelper {
   
   final val MASTER_SQL = """Select * from sqlite_master"""
   Class.forName("org.sqlite.JDBC")
   
-  def getDBDetails( dbFile : String ) = {
+  type DBDetails = (IndexedSeq[String], ResultSet, Connection)  
+
+  
+  def getDBDetails( dbFile : String ) : DBDetails = {
     
-	  val connection = DriverManager.getConnection(dbFile)
+	  val connection = DriverManager.getConnection("jdbc:sqlite:"+dbFile)
       val stmt = connection.createStatement
       val res= stmt.executeQuery(MASTER_SQL)
   
@@ -172,7 +182,36 @@ object MasterInfo {
       val cols = for(i <- 1 to md.getColumnCount())
     	  yield md.getColumnName(i)
   
-      cols
+      (cols, res, connection)
+  }
+  
+  def getTableDetails( tableName : String, conn : Connection ) = {
+    val stmt = conn.createStatement
+    val res= stmt.executeQuery(MASTER_SQL)
+  
+  }
+  
+  def printDBInfo( details : DBDetails )  : Unit =
+    printDBInfo(details._1, details._2)
+    
+  class MaxLenString( str : String ){
+  	def get( len : Int ) = if(str.length > len) { 
+  	  val substr = str.substring(0, len-3) + "..."
+  	  substr
+  	  } else str
+  }
+  
+  implicit def toMLS( str : String ) = new MaxLenString(str)  
+  
+  def printDBInfo( header : IndexedSeq[String],  results : ResultSet ) : Unit = {
+    println( header.mkString("", "\t\t", "") )
+    results.foreach( r => {
+      val values = header.map( h => r(h) match {
+        case StringResult(sr) => sr.get(20)
+        case _ => r(h)
+      }) 
+      println(values.mkString("","\t\t",""))
+    })
   }
   
   def getResultSetInfo( res : ResultSet ) = {
