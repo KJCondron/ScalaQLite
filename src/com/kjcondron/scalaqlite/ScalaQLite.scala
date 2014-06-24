@@ -6,6 +6,23 @@ import java.sql.ResultSet
 import types._
 import com.kjcondron.scalaqlite.ResultSetIterator._
 import scala.language.implicitConversions
+import scala.swing.SimpleSwingApplication
+import scala.swing.MainFrame
+import java.awt.Dimension
+import scala.swing.Component
+import javax.swing.JTree
+import javax.swing.tree.MutableTreeNode
+import javax.swing.tree.DefaultMutableTreeNode
+import scala.swing.ScrollPane
+import scala.swing.BoxPanel
+import scala.swing._
+import Swing._
+import javax.swing.event.TreeWillExpandListener
+import javax.swing.event.TreeExpansionEvent
+import javax.swing.event.TreeExpansionListener
+import java.util.Enumeration
+import javax.swing.tree.TreePath
+import javax.swing.text.Position
 
 sealed class Result
 
@@ -50,7 +67,7 @@ object ScalaQLite extends App {
     
   cols.foreach(println)
   println("st")
-  res.foreach( r => println(r.take(2).mkString(":")))
+  res.foreach( r => println(r.mkString(":")))
   println("end")
   
   val tables = stmt.executeQuery(TABLES_SQL)  
@@ -71,10 +88,10 @@ object ScalaQLite extends App {
   val upcres = stmt.executeQuery(BAR_SQL);
   MasterInfo.printResultSetInfo(upcres)
   val upcRows = upcres.take(100).toList
-  upcRows.foreach( r => {
+  /*upcRows.foreach( r => {
     println( r.mkString("PRODROW:", ",", "") + ":" + HttpTest.getResult( r("upc").toString ).mkString("HTTPRES:", ",", "" ))
     Thread.sleep(1000)
-  })
+  })*/
   
   HttpTest.shutdown
   
@@ -147,15 +164,13 @@ class ResultSetIterator( r : ResultSet ) extends Iterator[Row]
       } 
 	}
 	
-	def next() : Row = {
+	def next : Row = {
 			val ret = (1 to mColCount).map( x => getKey(x) -> getResult(x) )
 			hasNext = r.next
 			ret.toMap
 	}
 
 }
-
-
 
 object MasterInfo {
   
@@ -187,4 +202,96 @@ object MasterInfo {
   def printResultSetInfo( res : ResultSet ) =
     getResultSetInfo(res).foreach(println)
   
+}
+
+class WillExpandLister( 
+    expandFunc : TreeExpansionEvent => Unit,
+    collapseFunc : TreeExpansionEvent => Unit )
+    extends TreeWillExpandListener {
+  
+  def this( expandFunc : TreeExpansionEvent => Unit ) = this( expandFunc, _=>Unit )
+  
+  def treeWillCollapse(event : TreeExpansionEvent) : Unit =
+    collapseFunc(event)
+  def treeWillExpand(event : TreeExpansionEvent) : Unit =
+    expandFunc(event)
+  
+}
+
+class TreeExpandedLister( 
+    expandFunc : TreeExpansionEvent => Unit,
+    collapseFunc : TreeExpansionEvent => Unit )
+    extends TreeExpansionListener {
+  
+  def treeCollapsed(event : TreeExpansionEvent) : Unit =
+    collapseFunc(event)
+  def treeExpanded(event : TreeExpansionEvent) : Unit =
+    expandFunc(event)
+  
+}
+
+class DBViewer( val dbLoc : String ) extends Component {
+  
+  val dbInfo = MasterInfo.getDBDetails(dbLoc)
+  
+  def getTopNode = {
+    val headings = List("Tables", "Views")
+    val topNode = new DefaultMutableTreeNode(dbLoc)
+    
+    val tableNode = new DefaultMutableTreeNode("TABLES")
+    tableNode.add( new DefaultMutableTreeNode("dummy list"))
+    topNode.add(tableNode)
+    
+    val viewNode = new DefaultMutableTreeNode("VIEWS")
+    viewNode.add( new DefaultMutableTreeNode("dummy list"))
+    topNode.add(viewNode)
+    
+    topNode
+    
+  }
+    
+  override lazy val peer = {
+    
+    val tree = new JTree(getTopNode)
+    
+    val tablePath = tree.getNextMatch("TABLES", 0, Position.Bias.Forward)
+    val viewPath = tree.getNextMatch("VIEWS", 0, Position.Bias.Forward)
+    
+    
+    def tableEvent(evt : TreeExpansionEvent) = {
+      if( evt.getPath == tablePath ) {
+    	  val tblNode = evt.getPath.getLastPathComponent().asInstanceOf[DefaultMutableTreeNode]
+    	  tblNode.removeAllChildren
+    	  List('Table1, 'Table2, 'Table3).foreach(t=>tblNode.add(new DefaultMutableTreeNode(t)))
+      }
+    }
+    
+    def viewEvent(evt : TreeExpansionEvent) = {
+      if( evt.getPath == viewPath ) {
+    	  val viewNode = evt.getPath.getLastPathComponent().asInstanceOf[DefaultMutableTreeNode]
+    	  viewNode.removeAllChildren
+    	  List('View1, 'View2, 'view3).foreach(t=>viewNode.add(new DefaultMutableTreeNode(t)))
+      }
+    }
+    
+    tree.addTreeWillExpandListener(new WillExpandLister(
+        tableEvent _))
+        
+    tree.addTreeWillExpandListener(new WillExpandLister(
+        viewEvent _))
+       
+    tree
+  }
+}
+
+object SwingApp extends SimpleSwingApplication {
+  
+  def top = new MainFrame {
+    title = "MyApp"
+    preferredSize = new Dimension(600,600) 
+    contents = new SplitPane(
+        Orientation.Vertical,
+        new ScrollPane( new DBViewer("mydb") ),
+        new SplitPane(Orientation.Horizontal) )
+  }  
 }
