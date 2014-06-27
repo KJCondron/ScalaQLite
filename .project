@@ -3,7 +3,6 @@
 	<name>ScalaQLite</name>
 	<comment></comment>
 	<projects>
-		<project>BarKeepUtil</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
