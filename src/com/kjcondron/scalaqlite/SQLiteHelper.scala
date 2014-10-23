@@ -4,6 +4,8 @@ import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Connection
 import ResultSetIterator._
+import scala.swing.Dialog
+import java.sql.SQLException
 
 object SQLiteHelper {
   
@@ -21,7 +23,7 @@ object SQLiteHelper {
     
 	  val connection = DriverManager.getConnection("jdbc:sqlite:"+dbFile)
       val stmt = connection.createStatement
-      val res= stmt.executeQuery(MASTER_SQL)
+      val res = stmt.executeQuery(MASTER_SQL)
   
       val md = res.getMetaData()
       val cols = for(i <- 1 to md.getColumnCount())
@@ -36,8 +38,11 @@ object SQLiteHelper {
   }
   
   def getTableContents( tableName : String, conn : Connection ) = {
+    getRSContents( getTableRS(tableName, conn) )
+  }
+  
+  def getRSContents( res : ResultSet ) = {
     
-    val res = getTableRS(tableName, conn)
     val md = res.getMetaData()
     
     val header = getColNames(res)
@@ -96,5 +101,16 @@ object SQLiteHelper {
   
   def printResultSetInfo( res : ResultSet ) =
     getColNames(res).foreach(println)
+    
+  def executeQuery( conn : Connection, qry : String ) : Either[String,ResultSet] = {
+    try {
+      val stmt = conn.createStatement
+      val res = stmt.executeQuery(qry)
+      Right(res)
+    }
+    catch {
+      case sql : SQLException => Left(sql.getMessage())
+    } 
+  }
   
 }
