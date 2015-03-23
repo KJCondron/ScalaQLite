@@ -37,7 +37,7 @@ import scala.swing.Dialog
 
 object ScalaQLite extends App {
  
-  val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216"""
+  val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep_20141023"""
   val dbDetails = SQLiteHelper.getDBDetails(db)
   SQLiteHelper.printDBInfo(dbDetails)
 }
@@ -241,7 +241,7 @@ object SwingApp extends SimpleSwingApplication {
   
   //val db = """C:\Users\Karl\Documents\GitHub\BarKeepUtil\Data\db\barkeep__20140216"""
   
-  val db = """C:\Users\Karl\Documents\GitHub\BarKeep\assets\databases\barkeep_db"""
+  val db = """C:\Users\Karl\Documents\GitHub\BarKeep\assets\databases\barkeep"""
     
   val (_,_,conn) = SQLiteHelper.getDBDetails(db)
     
